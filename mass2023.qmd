@@ -1,0 +1,554 @@
+---
+title: <div white-space:nowrap;><h1>Dynamic Time</h1><h1>Warping-Based</h1> <h1>Imputation</h1></div>
+author:
+  - name: Danielle McCool
+bibliography: presentation.bib
+csl: apa-6th-edition.csl
+tbl-cap-location: bottom
+revealjs-plugins:
+  - attribution
+format: 
+  revealjs:
+    theme: custom.scss
+    auto-stretch: true
+    slide-level: 3
+    progress: true
+    fig-responsive: true
+    width: 1050
+    height: 700
+    footer: MASS · 23 June 2023 · Manchester University
+editor: visual
+---
+
+## Doomsday Queen {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+### MASS 1 - 2019 {background-image="backgrounds/leftsemicircles.png"}
+
+![](images/mass1.PNG)
+
+::: footer
+:::
+
+### MASS 3 - 2022 {background-image="backgrounds/leftsemicircles.png"}
+
+![](images/mass3.PNG)
+
+::: footer
+:::
+
+###  {background-image="images/thesis.png" background-size="contain"}
+
+::: footer
+:::
+
+## 1983 {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+###  {background-image="images/content.jpg" background-size="contain"}
+
+::: footer
+:::
+
+###  {background-image="backgrounds/topsemicircles.png"}
+
+![](images/six-key-issues.PNG)
+
+::: attribution
+[@ampt1985confintro, 187]
+:::
+
+::: footer
+:::
+
+### The six key issues in 1983 {.text background-image="backgrounds/linestogether.png"}
+
+1.  State-of-the-art vs state-of-the-practice
+2.  Differing results between established methods (sensors) and new methods (Travel Diaries)
+3.  Use of phones
+4.  Disparate levels of sophistication
+5.  Role of microcomputers
+6.  Need for experimentation
+
+::: footer
+:::
+
+### Travel Diary Studies were once future tech {background-image="backgrounds/linestogether.png"}
+
+::: columns
+::: {.column width="50%"}
+::: r-stack
+![](images/tds-1.PNG){height="580"}
+:::
+:::
+
+::: {.column width="50%"}
+::: r-stack
+![](images/tripdiary-1.PNG){height="275"} ![](images/tripdiary-2.PNG){height="275"}
+:::
+:::
+:::
+
+::: attribution
+[@ampt1985selectedresults, 187]
+:::
+
+::: footer
+:::
+
+###  {background-image="backgrounds/twistright.png" background-image-size="100%" background-position="50% 15%"}
+
+::: r-fit-text
+The evolution of the solutions
+:::
+
+. . .
+
+<br />
+
+::: r-fit-text
+took decades.
+:::
+
+::: footer
+:::
+
+## Travel Diary App {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+###  {data-background-video="images/tour_video_transportmode_nl.mp4" data-background-size="contain"}
+
+::: footer
+:::
+
+### Data from the app {data-background="backgrounds/linestogether.png"}
+
+![](images/coldstartcrop.png){height="300"}
+
+::: attribution
+[@mccool2021app]
+:::
+
+::: footer
+:::
+
+### Data from the app {data-background="backgrounds/linestogether.png"}
+
+![](images/coldstart.png)
+
+::: attribution
+[@mccool2021app]
+:::
+
+::: footer
+:::
+
+### Missing data {data-background="backgrounds/leftsemicircles.png"}
+
+::: columns
+::: {.column width="70%"}
+![](images/completedata.png)
+:::
+
+::: {.column width="30%"}
+-   Most people have missing data
+-   Only 2 of 274 respondents had 7 contiguous days of complete data
+:::
+:::
+
+::: attribution
+[@mccool2021app]
+:::
+
+::: footer
+:::
+
+### Gaps in the data {data-background="backgrounds/leftsemicircles.png"}
+
+![](images/resplonggaps-rc.png)
+
+::: attribution
+[@mccool2022maximum]
+:::
+
+::: footer
+:::
+
+### Gaps in the data {data-background="backgrounds/leftsemicircles.png"}
+
+![](images/resplonggaps-rc-exp.png)
+
+::: attribution
+[@mccool2022maximum]
+:::
+
+::: footer
+:::
+
+### Many long gaps
+
+![](images/datalonggaps-rc.png)
+
+::: footer
+:::
+
+### Long gaps at night
+
+![](images/datalonggaps-night.png)
+
+::: footer
+:::
+
+## Does it matter? {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+### Two methods {.text background-image="backgrounds/topsemicircles.png" background-position="bottom"}
+
+. . .
+
+1.  Start from the data with no missingness and make holes
+
+. . .
+
+2.  Apply methodology to the data and see what changes
+
+::: footer
+:::
+
+## Method 1: Fake holes
+
+### Method 1: Short gaps are okay
+
+::: rstack
+| Min Removed/Hr   | Travel Distance (km)   | Stops                |
+|------------------|------------------------|----------------------|
+| 1                | 0 (0%)                 | 0 (0%)               |
+| 5                | -0.4 (0%)              | 0 (0%)               |
+| [10]{.underline} | [-1 (-4%)]{.underline} | [0 (0%)]{.underline} |
+| 15               | -1.8 (-7.4%)           | 0 (0%)               |
+| 20               | -2.9 (-10.8%)          | 0 (0%)               |
+
+: Short gap sensitivity: Median (%) absolute difference
+:::
+
+::: footer
+:::
+
+::: attribution
+[@mccool2022maximum]
+:::
+
+### Method 1: Long gaps less so
+
+![](images/comparisonshortlong.png)
+
+::: footer
+:::
+
+::: attribution
+[@mccool2022maximum]
+:::
+
+### Method 1: Gap-filling {.text background-image="backgrounds/twist.png"}
+
+|                                                | Abs. Bias | Travel Period Acc. |
+|------------------------------------|-------------------|-------------------|
+| Linear Interpolation                           | 5.9Km     | 92%                |
+| Mean Imputation                                | 1.9Km     | 94%                |
+| Time Window Imputation                         | 1.1Km     | 92%                |
+| Dynamic Time Warping-Based Multiple Imputation | .6Km      | 95%                |
+
+: Outcomes aggregating over all conditions
+
+::: footer
+:::
+
+### Method 1: Twelve hour gaps {.text background-image="backgrounds/topsemicircles.png" background-size="100%" background-position="top"}
+
+|                  Method |            Abs Bias |            Med Bias |               TP Acc |
+|------------------:|-----------------:|-----------------:|-----------------:|
+|                      LI |               9.4Km |              −1.9Km |               94.40% |
+|                      MI |              10.9Km |              21.2Km |               95.20% |
+|                     TWI |               9.3Km |                13Km |               93.80% |
+| [DTWBMI-LO]{.underline} | [0.2Km]{.underline} | [1.7Km]{.underline} | [96.00%]{.underline} |
+
+::: footer
+:::
+
+### Method 1: Night only
+
+|                  Method |            Abs Bias |            Med Bias |              TP Acc |
+|------------------:|-----------------:|-----------------:|-----------------:|
+|        [LI]{.underline} | [0.0Km]{.underline} | [0.0Km]{.underline} |  [100%]{.underline} |
+|                      MI |               5.5Km |               5.8Km |                100% |
+|                     TWI |               0.6Km |               0.1Km |               99.4% |
+| [DTWBMI-LO]{.underline} | [0.0Km]{.underline} | [0.0Km]{.underline} | [99.8%]{.underline} |
+
+. . .
+
+::: r-fit-text
+Does it matter?
+:::
+
+::: footer
+:::
+
+## Method 2: Real holes
+
+::: footer
+:::
+
+### Method 2: Listwise deletion
+
+| Day | Total Distance | Mean Distance/Trip | Total Travel Time | Trips |
+|:----|:---------------|:-------------------|:------------------|------:|
+| Sun | 23 km          | 7 km               | 28 min            |   1.5 |
+| Fri | 63 km          | 13 km              | 66 min            |   4.1 |
+
+: Means, keeping only persons with full weeks (N = 12)
+
+::: footer
+:::
+
+### Method 2: Linear interpolation
+
+| Day | Total Distance | Mean Distance/Trip | Total Travel Time | Trips |
+|:----|:---------------|:-------------------|:------------------|------:|
+| Sun | 28 km          | 9 km               | 34 min            |   2.6 |
+| Fri | 51 km          | 11 km              | 60 min            |   4.5 |
+
+: Means, keeping full days from persons following linear interpolation (N = 160, N days = 604)
+
+::: footer
+:::
+
+### Method 2: DTW imputation
+
+| Day | Total Distance | Mean Distance/Trip | Total Travel Time | Trips |
+|:----|:---------------|:-------------------|:------------------|------:|
+| Sun | 30 km          | 18 km              | 31 min            |   1.7 |
+| Fri | 44 km          | 11 km              | 48 min            |   4.1 |
+
+: Means, keeping full days from persons following linear interpolation (N = 160, N days = 604)
+
+::: footer
+:::
+
+### Method 2: ODiN Data
+
+| Day | Total Distance | Mean Distance/Trip | Total Travel Time | Trips |
+|:----|:---------------|:-------------------|:------------------|------:|
+| Sun | 34 km          | 17 km              | 34 min            |   2.1 |
+| Fri | 39 km          | 13 km              | 27 min            |   3.1 |
+
+::: footer
+:::
+
+### Method 2: Comparison of a Sunday
+
+|                      | Total Distance | Trips | Total Time |
+|----------------------|----------------|-------|------------|
+| ODiN                 | 34Km           | 2.1   | 34 min     |
+| Listwise deletion    | 23Km           | 1.5   | 28 min     |
+| Linear interpolation | 28Km           | 2.6   | 34 min     |
+| DTW imputation       | 30Km           | 1.7   | 31 min     |
+
+::: footer
+:::
+
+### Recap {.text background-image="backgrounds/linesapart.png"}
+
+::: columns
+::: column
+[The missing data problem is a serious problem with data collected via a smartphone]{.fragment .fade-in}
+
+[There's no fantastic existing methodology to correct for it]{.fragment .fade-in}
+
+[Dynamic Time Warping-Based Multiple Imputation might help, but has some problems]{.fragment .fade-in}
+:::
+
+::: column
+[We do see meaningful differences between gap-filling methodologies, implying that it does matter]{.fragment .fade-in}
+
+[Imputing the gaps brings us closer to other data sources]{.fragment .fade-in}
+:::
+:::
+
+::: footer
+:::
+
+## References {.section background-image="backgrounds/bend.png"}
+
+::: {#refs}
+:::
+
+::: footer
+:::
+
+## Appendix
+
+## Imputing the data {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+### The imputation procedure
+
+![](images/query.png)
+
+A query is the trajectory with a gap
+
+::: footer
+:::
+
+### The imputation procedure
+
+![](images/refs.png)
+
+We need data to fill the gap from other (complete) trajectories
+
+::: footer
+:::
+
+### The imputation procedure
+
+![](images/dtwimputation.png)
+
+We calculate how similar trajectories are before and after the gap using Dynamic Time Warping
+
+::: footer
+:::
+
+## Dynamic Time Warping {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+### What is Dynamic Time Warping
+
+![](images/DTW-align.svg)
+
+Dynamic Time Warping finds the path of best alignment between two series
+
+::: footer
+:::
+
+### What is Dynamic Time Warping
+
+![](images/DTW.svg)
+
+There are lots of ways to specify its parameters
+
+::: footer
+:::
+
+### Two variants {.text background-image="backgrounds/linestogether.png"}
+
+We selected a high-information and low-information variant to test on simulated data.
+
+-   <b>High-information</b> specifies parameters that opt for closer matching to longer periods of data -- optimal when there's lots of overlapping data from individuals.
+
+-   <b>Low-information</b> specifies parameters that are more lax and matches trajectories based on what occurred immediately before and after the gap.
+
+::: footer
+:::
+
+## Other time gaps
+
+### Long gaps - One hour {.text background-image="backgrounds/topsemicircles.png" background-size="100%" background-position="top"}
+
+|              Method |            Abs Bias |          Med Bias |               TP Acc |
+|-----------------:|-----------------:|-----------------:|-----------------:|
+|                  LI |               0.8Km |               0Km |               93.00% |
+|                  MI |               0.9Km |             1.9Km |               93.00% |
+|                 TWI |               1.4Km |             0.2Km |               89.30% |
+| [DTWBI]{.underline} | [0.5Km]{.underline} | [0Km]{.underline} | [95.00%]{.underline} |
+|           DTWBMI-HI |               1.4Km |               0Km |               94.10% |
+|           DTWBMI-LO |               0.7Km |               0Km |               95.70% |
+
+::: footer
+:::
+
+### Long gaps - Six hours {.text background-image="backgrounds/topsemicircles.png" background-size="100%" background-position="top"}
+
+|                  Method |            Abs Bias |            Med Bias |               TP Acc |
+|------------------:|-----------------:|-----------------:|-----------------:|
+|                      LI |               5.4Km |              −0.2Km |               92.90% |
+|                      MI |               1.4Km |              11.5Km |               94.50% |
+|                     TWI |               0.2Km |               3.3Km |               93.00% |
+|                   DTWBI |               3.4Km |                 0Km |               96.50% |
+|               DTWBMI-HI |               3.4Km |               0.1Km |               94.80% |
+| [DTWBMI-LO]{.underline} | [1.9Km]{.underline} | [0.1Km]{.underline} | [95.60%]{.underline} |
+
+::: footer
+:::
+
+### Comparison with interpolation {.text background-image="backgrounds/topsemicircles.png" background-size="100%" background-position="top"}
+
+| Gap Length |                  Method |            Abs Bias |            Med Bias |
+|-----------------:|------------------:|-----------------:|-----------------:|
+|       1 hr |                      LI |               0.8Km |                 0Km |
+|       1 hr | [DTWBMI-LO]{.underline} | [0.7Km]{.underline} |   [0Km]{.underline} |
+|      6 hrs |                      LI |               5.4Km |              −0.2Km |
+|      6 hrs | [DTWBMI-LO]{.underline} | [1.9Km]{.underline} | [0.1Km]{.underline} |
+|     12 hrs |                      LI |               9.4Km |              −1.9Km |
+|     12 hrs | [DTWBMI-LO]{.underline} | [0.2Km]{.underline} | [1.7Km]{.underline} |
+
+::: footer
+:::
+
+## Full tables
+
+### Method 2: Listwise deletion
+
+| Day | Total Distance | Mean Distance/Trip | Total Travel Time | Trips |
+|:----|:---------------|:-------------------|:------------------|------:|
+| Sun | 23 km          | 7 km               | 28 min            |   1.5 |
+| Mon | 22 km          | 5 km               | 34 min            |   2.9 |
+| Tue | 33 km          | 11 km              | 42 min            |   2.9 |
+| Wed | 40 km          | 12 km              | 46 min            |   3.1 |
+| Thu | 43 km          | 13 km              | 56 min            |   3.9 |
+| Fri | 63 km          | 13 km              | 66 min            |   4.1 |
+| Sat | 59 km          | 13 km              | 67 min            |   3.2 |
+
+: Means, keeping only persons with full weeks (N = 12)
+
+::: footer
+:::
+
+### Method 2: Linear interpolation
+
+| Day | Total Distance | Mean Distance/Trip | Total Travel Time | Trips |
+|:----|:---------------|:-------------------|:------------------|------:|
+| Sun | 28 km          | 9 km               | 28 min            |   1.5 |
+| Mon | 49 km          | 11 km              | 34 min            |   2.9 |
+| Tue | 45 km          | 13 km              | 42 min            |   2.9 |
+| Wed | 54 km          | 14 km              | 46 min            |   3.1 |
+| Thu | 56 km          | 13 km              | 56 min            |   3.9 |
+| Fri | 51 km          | 11 km              | 66 min            |   4.1 |
+| Sat | 49 km          | 11 km              | 67 min            |   3.2 |
+
+: Means, keeping full days from persons following linear interpolation (N = 160, N days = 604)
+
+::: footer
+:::
+
+### Method 2: ODiN Data
+
+| Day | Total Distance | Mean Distance/Trip | Total Travel Time | Trips |
+|:----|:---------------|:-------------------|:------------------|------:|
+| Sun | 34 km          | 17 km              | 34 min            |   2.1 |
+| Mon | 34 km          | 13 km              | 26 min            |   2.8 |
+| Tue | 37 km          | 13 km              | 27 min            |   2.9 |
+| Wed | 35 km          | 13 km              | 27 min            |   2.9 |
+| Thu | 36 km          | 13 km              | 27 min            |   2.9 |
+| Fri | 39 km          | 13 km              | 27 min            |   3.1 |
+| Sat | 38 km          | 14 km              | 28 min            |   2.8 |

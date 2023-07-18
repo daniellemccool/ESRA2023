@@ -1,0 +1,494 @@
+---
+title: <div white-space:nowrap;><h1>Dynamic Time</h1><h1>Warping-Based</h1> <h1>Imputation</h1></div>
+author:
+  - name: Danielle McCool
+bibliography: presentation.bib
+csl: apa-6th-edition.csl
+tbl-cap-location: bottom
+revealjs-plugins:
+  - attribution
+format: 
+  revealjs:
+    theme: custom.scss
+    auto-stretch: true
+    slide-level: 3
+    progress: true
+    fig-responsive: true
+    width: 1050
+    height: 700
+    footer: ESRA · 18 July 2023 · Milan, Italy
+editor: visual
+---
+
+## Solution Evolution {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+### Future Technologies {.images background-image="images/halfup.png" background-position="top 0 left 600px" background-size="50%"}
+
+::: r-stack
+![](images/projectmercury.jpg){.fragment height="450"}
+
+::: {.text .fragment .absolute .fade-in-then-out .r-fit-text bottom="0"}
+Windows and manual navigation controls were added to account for some situations
+:::
+
+![](images/Arpanet_Map.png){.fragment height="450"}
+
+::: {.text .fragment .fade-in-then-out .absolute .r-fit-text bottom="0"}
+Dirty lines demanded development of packet-switching and error-checking mechanisms
+:::
+
+![](images/sanger.jpg){.fragment height="500"}
+
+::: {.text .fragment .fade-in .absolute .r-fit-text bottom="0"}
+Needed entirely new methodology for Next-Gen Sequencing
+:::
+:::
+
+::: attribution
+[First Sequencer](https://coimages.sciencemuseumgroup.org.uk/images/675/large_1989_1242__0001_.jpg) · Science Museum Group · [CC](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+[Arpanet 1972 Map](https://commons.wikimedia.org/wiki/File:Arpanet_1972_Map.png) · UCLA and BBN · [CC](https://creativecommons.org/licenses/by-sa/4.0/legalcode)</br>
+:::
+
+::: footer
+:::
+
+### Travel Diary Studies were once future tech {background-image="backgrounds/linestogether.png"}
+
+::: columns
+::: {.column width="50%"}
+::: r-stack
+![](images/tds-1.PNG){height="580"}
+:::
+:::
+
+::: {.column width="50%"}
+::: r-stack
+![](images/tripdiary-1.PNG){height="275"} ![](images/tripdiary-2.PNG){height="275"}
+:::
+:::
+:::
+
+::: attribution
+[@ampt1985selectedresults, 187]
+:::
+
+::: footer
+:::
+
+### That had unexpected problems {background-image="backgrounds/leftsemicircles.png" background-size="50%" background-position="left"}
+
+::: columns
+::: {.column width="40%"}
+-   Enormous burden[^1]
+:::
+
+::: {.column width="60%"}
+![](images/tripdiary-1.PNG){height="400"}
+:::
+:::
+
+[^1]: [@brog1983development]
+
+::: footer
+:::
+
+### That had unexpected problems {background-image="backgrounds/leftsemicircles.png" background-size="50%" background-position="left"}
+
+::: columns
+::: {.column width="40%"}
+-   Enormous burden[^2]
+-   Poor data quality[^3]
+:::
+
+::: {.column width="60%"}
+![](images/dataquality.PNG){height="400"}
+:::
+:::
+
+[^2]: [@brog1983development]
+
+[^3]: [@ampt1985collection]
+
+::: footer
+:::
+
+### That had unexpected problems {background-image="backgrounds/leftsemicircles.png" background-size="50%" background-position="left"}
+
+::: columns
+::: {.column width="40%"}
+-   Enormous burden[^4]
+-   Poor data quality[^5]
+-   Wouldn't validate against existing external sources[^6]
+:::
+
+::: {.column width="60%"}
+![](images/externaldata.PNG){height="400"}
+:::
+:::
+
+[^4]: [@brog1983development]
+
+[^5]: [@ampt1985collection]
+
+[^6]: [@ampt1985new]
+
+::: footer
+:::
+
+###  {background-image="backgrounds/twistright.png" background-image-size="100%" background-position="50% 15%"}
+
+::: r-fit-text
+The evolution of the solutions
+:::
+
+. . .
+
+<br />
+
+::: r-fit-text
+took decades.
+:::
+
+::: footer
+:::
+
+### Current state of Travel Diary Studies {.text background-image="backgrounds/linesapart.png"}
+
+-   Widespread usage globally
+
+. . .
+
+-   Robust methodology
+
+. . .
+
+-   One even forms the backbone of the Dutch national transportation model
+
+::: footer
+:::
+
+## Travel Diary App {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+###  {data-background-video="images/tour_video_transportmode_nl.mp4" data-background-size="contain"}
+
+::: footer
+:::
+
+### Using the data like a travel survey {background-image="backgrounds/twistright.png"}
+
+::: {.r-fit-text .fragment .absolute top="200"}
+It's hard.
+:::
+
+. . .
+
+::: {.r-fit-text .absolute top="600"}
+There's a lot of missing data.
+:::
+
+::: footer
+:::
+
+### Data from the app {data-background="backgrounds/linestogether.png"}
+
+![](images/coldstartcrop.png){height="300"}
+
+::: attribution
+[@mccool2021app]
+:::
+
+::: footer
+:::
+
+### Data from the app {data-background="backgrounds/linestogether.png"}
+
+![](images/coldstart.png)
+
+::: attribution
+[@mccool2021app]
+:::
+
+::: footer
+:::
+
+### Missing data
+
+::: columns
+::: {.column width="70%"}
+![](images/completedata.png)
+:::
+
+::: {.column width="30%"}
+-   Most people have missing data
+-   Only 2 of 274 respondents had 7 contiguous days of complete data
+:::
+:::
+
+::: attribution
+[@mccool2021app]
+:::
+
+::: footer
+:::
+
+### Gaps in the data
+
+![](images/resplonggaps-rc.png)
+
+::: attribution
+[@mccool2022maximum]
+:::
+
+::: footer
+:::
+
+### Gaps in the data
+
+![](images/resplonggaps-rc-exp.png)
+
+::: attribution
+[@mccool2022maximum]
+:::
+
+::: footer
+:::
+
+### Short gap sensitivity:
+
+::: rstack
+| Min Removed/Hr   | Travel Distance (km)   | Stops                |
+|------------------|------------------------|----------------------|
+| 1                | 0 (0%)                 | 0 (0%)               |
+| 2                | -0.1 (0%)              | 0 (0%)               |
+| 3                | -0.2 (0%)              | 0 (0%)               |
+| 4                | -0.3 (0%)              | 0 (0%)               |
+| 5                | -0.4 (0%)              | 0 (0%)               |
+| [10]{.underline} | [-1 (-4%)]{.underline} | [0 (0%)]{.underline} |
+| 15               | -1.8 (-7.4%)           | 0 (0%)               |
+| 20               | -2.9 (-10.8%)          | 0 (0%)               |
+
+: Short gap sensitivity: Median (%) absolute difference
+:::
+
+::: footer
+:::
+
+::: attribution
+[@mccool2022maximum]
+:::
+
+### Long gaps
+
+::: columns
+::: {.column width="70%"}
+![](images/comparisonshortlong.png)
+:::
+
+::: {.column width="30%"}
+-   Short gaps are mostly fine
+-   Long gaps not so much
+:::
+:::
+
+::: footer
+:::
+
+### Many long gaps
+
+![](images/datalonggaps-rc.png)
+
+::: footer
+:::
+
+### Long gaps at night
+
+![](images/datalonggaps-night.png)
+
+::: footer
+:::
+
+## Imputing the data {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+### The imputation procedure
+
+![](images/query.png)
+
+A query is the trajectory with a gap
+
+::: footer
+:::
+
+### The imputation procedure
+
+![](images/refs.png)
+
+We need data to fill the gap from other (complete) trajectories
+
+::: footer
+:::
+
+### The imputation procedure
+
+![](images/dtwimputation.png)
+
+We calculate how similar trajectories are before and after the gap using Dynamic Time Warping
+
+::: footer
+:::
+
+## Dynamic Time Warping {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+### What is Dynamic Time Warping
+
+![](images/DTW-align.svg)
+
+Dynamic Time Warping finds the path of best alignment between two series
+
+::: footer
+:::
+
+### What is Dynamic Time Warping
+
+![](images/DTW.svg)
+
+There are lots of ways to specify its parameters
+
+::: footer
+:::
+
+### Two variants {.text background-image="backgrounds/linestogether.png"}
+
+We selected a high-information and low-information variant to test on simulated data.
+
+-   <b>High-information</b> specifies parameters that opt for closer matching to longer periods of data -- optimal when there's lots of overlapping data from individuals.
+
+-   <b>Low-information</b> specifies parameters that are more lax and matches trajectories based on what occurred immediately before and after the gap.
+
+::: footer
+:::
+
+## Results {.section background-image="backgrounds/bend.png"}
+
+::: footer
+:::
+
+### Results {background-image="backgrounds/twist.png"}
+
+![](images/restab1.PNG)
+
+::: columns
+::: {.column width="50%"}
+-   Performance over all conditions favors DTW methods
+:::
+
+::: {.column width="50%"}
+-   Especially the low-information variant
+:::
+:::
+
+::: footer
+:::
+
+### Long gaps - One hour {.text background-image="backgrounds/topsemicircles.png" background-size="100%" background-position="top"}
+
+|              Method |            Abs Bias |          Med Bias |               TP Acc |
+|-----------------:|-----------------:|-----------------:|------------------:|
+|                  LI |               0.8Km |               0Km |               93.00% |
+|                  MI |               0.9Km |             1.9Km |               93.00% |
+|                 TWI |               1.4Km |             0.2Km |               89.30% |
+| [DTWBI]{.underline} | [0.5Km]{.underline} | [0Km]{.underline} | [95.00%]{.underline} |
+|           DTWBMI-HI |               1.4Km |               0Km |               94.10% |
+|           DTWBMI-LO |               0.7Km |               0Km |               95.70% |
+
+::: footer
+:::
+
+### Long gaps - Six hours {.text background-image="backgrounds/topsemicircles.png" background-size="100%" background-position="top"}
+
+|                  Method |            Abs Bias |            Med Bias |               TP Acc |
+|-------------------:|-----------------:|-----------------:|-----------------:|
+|                      LI |               5.4Km |              −0.2Km |               92.90% |
+|                      MI |               1.4Km |              11.5Km |               94.50% |
+|                     TWI |               0.2Km |               3.3Km |               93.00% |
+|                   DTWBI |               3.4Km |                 0Km |               96.50% |
+|               DTWBMI-HI |               3.4Km |               0.1Km |               94.80% |
+| [DTWBMI-LO]{.underline} | [1.9Km]{.underline} | [0.1Km]{.underline} | [95.60%]{.underline} |
+
+::: footer
+:::
+
+### Long gaps - Twelve hours {.text background-image="backgrounds/topsemicircles.png" background-size="100%" background-position="top"}
+
+|                  Method |            Abs Bias |             Med Bias |               TP Acc |
+|-------------------:|-----------------:|-----------------:|-----------------:|
+|                      LI |               9.4Km |               −1.9Km |               94.40% |
+|                      MI |              10.9Km |               21.2Km |               95.20% |
+|                     TWI |               9.3Km |                 13Km |               93.80% |
+|     [DTWBI]{.underline} | [0.1Km]{.underline} | [−0.4Km]{.underline} | [95.90%]{.underline} |
+|               DTWBMI-HI |               4.5Km |                2.4Km |               94.30% |
+| [DTWBMI-LO]{.underline} | [0.2Km]{.underline} |  [1.7Km]{.underline} | [96.00%]{.underline} |
+
+::: footer
+:::
+
+### Comparison with interpolation {.text background-image="backgrounds/topsemicircles.png" background-size="100%" background-position="top"}
+
+| Gap Length |                  Method |            Abs Bias |            Med Bias |
+|----------------:|--------------------:|-----------------:|-----------------:|
+|       1 hr |                      LI |               0.8Km |                 0Km |
+|       1 hr | [DTWBMI-LO]{.underline} | [0.7Km]{.underline} |   [0Km]{.underline} |
+|      6 hrs |                      LI |               5.4Km |              −0.2Km |
+|      6 hrs | [DTWBMI-LO]{.underline} | [1.9Km]{.underline} | [0.1Km]{.underline} |
+|     12 hrs |                      LI |               9.4Km |              −1.9Km |
+|     12 hrs | [DTWBMI-LO]{.underline} | [0.2Km]{.underline} | [1.7Km]{.underline} |
+
+::: footer
+:::
+
+### Recap {.text background-image="backgrounds/linesapart.png"}
+
+::: columns
+::: column
+[The missing data problem is a serious problem with data collected via a smartphone]{.fragment .fade-in}
+
+[(To be expected with future tech)]{.fragment .fade-in}
+
+[There's no fantastic existing methodology to correct for it]{.fragment .fade-in}
+:::
+
+::: column
+[Dynamic Time Warping-Based Multiple Imputation has some promise]{.fragment .fade-in}
+
+[Disappointingly, the high-information variant performs worse]{.fragment .fade-in}
+
+-   [Things that might help]{.fragment .fade-in}
+
+    -   [More data per person]{.fragment .fade-in}
+
+    -   [Including personal/trip variables in the imputation]{.fragment .fade-in}
+:::
+:::
+
+::: footer
+:::
+
+## References {.section background-image="backgrounds/bend.png"}
+
+::: {#refs}
+:::
+
+::: footer
+:::

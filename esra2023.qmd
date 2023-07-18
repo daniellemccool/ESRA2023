@@ -1,5 +1,5 @@
 ---
-title: <div white-space:nowrap;><h1>Dynamic Time</h1><h1>Warping-Based</h1> <h1>Imputation</h1></div>
+title: <div white-space:nowrap;><h1>Imputing</h1><h1>Smartphone</h1> <h1>Mobility Data</h1></div>
 author:
   - name: Danielle McCool
 bibliography: presentation.bib
